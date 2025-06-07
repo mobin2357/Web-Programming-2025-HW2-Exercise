@@ -1,0 +1,110 @@
+/* src/pages/FormResults.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* CSS variables for easy theming */
+:root {
+  --primary: #4f46e5;
+  --secondary: #6b7280;
+  --bg: #90bbe5;
+  --card-bg: #ffffff;
+  --text: #000000;
+  --border: #e5e7eb;
+  --hover: #eef2ff;
+}
+
+.form-results {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+.form-results main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.form-results h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* Chart toggle buttons */
+.chart-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.chart-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid var(--primary);
+  background-color: var(--card-bg);
+  color: var(--primary);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.chart-buttons button:hover,
+.chart-buttons button.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* Chart card styling */
+.chart-container {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+/* Table card styling */
+.table-container {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.table-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-container th,
+.table-container td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.table-container th {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+.table-container tr:nth-child(even) {
+  background-color: var(--bg);
+}
+.table-container tr:hover {
+  background-color: var(--hover);
+}
+
+/* States */
+.loader,
+.error,
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.25rem;
+  color: var(--secondary);
+}
