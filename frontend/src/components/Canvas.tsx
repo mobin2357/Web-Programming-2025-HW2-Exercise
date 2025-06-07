@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+// import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./Canvas.module.css";
 import Shape from "./Shape";
 import { useShape /*, ShapeType*/ } from "../context/ShapeContext";

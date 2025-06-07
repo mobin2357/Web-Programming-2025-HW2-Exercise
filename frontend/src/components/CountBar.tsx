@@ -1,10 +1,10 @@
 import styles from "./CountBar.module.css";
-import Shape from "./Shape";
+// import Shape from "./Shape";
 import { useCount } from "../context/CountContext";
 
 const CountBar = () => {
   const { counts } = useCount();
-  const shapes = ["circle", "square", "triangle"] as const;
+  // const shapes = ["circle", "square", "triangle"] as const;
   return (
     <div className={styles.countBar}>
       <p>Circle: {counts.circle}</p>

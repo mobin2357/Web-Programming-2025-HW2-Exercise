@@ -1,12 +1,5 @@
 import { Routes, Route } from "react-router";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import FormBuilder from "./pages/FormBuilder";
-import FormResults from "./pages/FormResults";
-import EditUser from "./pages/EditUser";
-import FillForm from "./pages/FillForm";
-import HomePage from "./pages/HomePage";
-import { NavBar, NavBarItem } from "./components/aNavBar";
 
 function App() {
   return (
