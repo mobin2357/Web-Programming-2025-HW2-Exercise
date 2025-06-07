@@ -8,6 +8,7 @@ import CountBar from "../components/CountBar";
 // import { ListProvider, useList } from "../context/ListContext";
 import { ListProvider } from "../context/ListContext";
 import TitleBox from "../components/TitleBox";
+import { TitleProvider } from "../context/TitleContext";
 
 export default function FormBuilder() {
   return (
@@ -21,6 +22,8 @@ export default function FormBuilder() {
 
       <main>
         <ListProvider>
+          {/** */}
+          <TitleProvider>
           {/* <div className={styles.titleBox}>
             <h2 className={styles.title}>Painting Title</h2>
             <div className={styles.buttonGroup}>
@@ -40,6 +43,8 @@ export default function FormBuilder() {
               </ShapeProvider>
             </div>
           </CountProvider>
+          {/** */}
+          </TitleProvider>
         </ListProvider>
       </main>
     </div>

@@ -33,3 +33,44 @@
   .top-button:hover {
     transform: scale(1.05);
   }
+
+  /*********************************************/
+  .editableTitle {
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .editableTitle:hover {
+    background-color: #fcf0bf;  
+    background-color: #faf3d6;
+    color: #007bff;
+  }
+  
+  .titleEditContainer {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .titleInput {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    background-color: white;
+    background-color: rgb(190, 206, 250);
+    /* background-color: rgb(246, 194, 238); */  
+    background-color: #e6f0fa;
+    outline: none;
+    font-family: inherit;
+    min-width: 200px;
+    text-align: left;
+  }
+  
+  .titleInput:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }

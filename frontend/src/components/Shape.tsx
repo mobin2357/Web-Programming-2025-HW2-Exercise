@@ -123,6 +123,27 @@ const Shape = ({ panelType, shapeType, isSelected, onSelect, onRemove, x, y }: P
           </svg>
       </button>
   );
+
+  // return (
+  //   <button
+  //       className={shapeClasses}
+  //       onClick={isInteractive ? undefined : handleClick}
+  //       style={{
+  //         ...canvasStyle,
+  //         pointerEvents: panelType === "canvas" ? "none" : "auto", // disables button interaction
+  //         background: "transparent"
+  //       }}
+  //   >
+  //     <svg className={`${styles.shapeButton} ${panelType === "canvas" ? styles.noHover : ""}`}
+  //       width="120" 
+  //       height="104" 
+  //       viewBox="0 0 120 104"
+  //       draggable={panelType === 'tools'}
+  //       onDragStart={panelType === "tools" ? handleDragStart : undefined}>
+  //         {renderShape()}
+  //     </svg>
+  //   </button>
+  // );
 }
 
 export default Shape;
