@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { PlacedShape } from '../data/ShapeTypes';
+import { useTitle } from './TitleContext';
 
 // interface PlacedShape {
 //   id: number;
@@ -26,11 +27,13 @@ export const useList = () => {
 
 export const ListProvider = ({ children }: { children: ReactNode}) => {
   const [shapesList, setShapesList] = useState<PlacedShape[]>([]);
+  const { paintingTitle } = useTitle();
 
   const exportPainting = () => {
     const paintingData = {
       timestamp: new Date().toISOString(),
-      shapes: shapesList
+      shapes: shapesList,
+      title: paintingTitle,
     };
     
     const jsonString = JSON.stringify(paintingData, null, 2);
