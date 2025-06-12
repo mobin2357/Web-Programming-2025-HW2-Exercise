@@ -2,13 +2,6 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { PlacedShape } from '../data/ShapeTypes';
 import { useTitle } from './TitleContext';
 
-// interface PlacedShape {
-//   id: number;
-//   type: ShapeType;
-//   x: number;
-//   y: number;
-// }
-
 interface ListContextType {
   shapesList: PlacedShape[];
   setShapesList: React.Dispatch<React.SetStateAction<PlacedShape[]>>;

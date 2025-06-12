@@ -1,27 +1,16 @@
-// import React, { useState, useRef } from "react";
 import React, { useRef } from "react";
 import styles from "./Canvas.module.css";
 import Shape from "./Shape";
-import { useShape /*, ShapeType*/ } from "../context/ShapeContext";
+import { useShape } from "../context/ShapeContext";
 import { useCount } from "../context/CountContext";
 import { ShapeType, PlacedShape } from '../data/ShapeTypes';
 import { useList } from "../context/ListContext";
 
-// interface PlacedShape {
-//   id: number;
-//   type: ShapeType;
-//   x: number;
-//   y: number;
-// }
-
 const Canvas = () => {
   const { selectedShape, setSelectedShape } = useShape();
   const { increment, decrement } = useCount();
-  // const [ shapesList, setShapesList ] = useState<PlacedShape[]>([]);
   const { shapesList, setShapesList } = useList();
   const canvasRef = useRef<HTMLDivElement>(null);
-
-  // const shapes = ["circle", "square", "triangle"] as const;
 
   const placeShape = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!selectedShape) return;
@@ -71,7 +60,6 @@ const Canvas = () => {
       y
     };
     setShapesList((prev: PlacedShape[]) => [...prev, newShape]);
-    // console.log(shapesList);
     increment(type);
   };
 

@@ -1,7 +1,5 @@
-// import React, { useState } from "react";
 import styles from "./Shape.module.css";
 import { useShape } from "../context/ShapeContext";
-// import { ShapeType } from '../data/ShapeTypes';
 
 interface Props {
     panelType: "canvas" | "tools";
@@ -26,6 +24,7 @@ const Shape = ({ panelType, shapeType, isSelected, onSelect, onRemove, x, y }: P
           onSelect();
       }
   };
+
   // Handle double click for canvas panel
   const handleDoubleClick = () => {
     console.log(`Removing ...`);
@@ -34,7 +33,6 @@ const Shape = ({ panelType, shapeType, isSelected, onSelect, onRemove, x, y }: P
     }
   };
 
-  // inside Shape component
   const handleDragStart = (e: React.DragEvent) => {
     if (panelType === 'tools') {
       e.dataTransfer.setData("shape-type", shapeType); // pass shape type via drag data
@@ -52,7 +50,6 @@ const Shape = ({ panelType, shapeType, isSelected, onSelect, onRemove, x, y }: P
               className={`${styles.shapeStroke} ${
                 isSelected ? styles.selectedStroke : ""
               }`}
-              // style={{ pointerEvents: "stroke", cursor: "pointer" }}
               style={{ pointerEvents: (!isInteractive ? "none" : "stroke"), cursor: isInteractive ? "pointer" : "default" }}
               onDoubleClick={isInteractive ? handleDoubleClick : undefined}
             />
@@ -67,7 +64,6 @@ const Shape = ({ panelType, shapeType, isSelected, onSelect, onRemove, x, y }: P
               className={`${styles.shapeStroke} ${
                 isSelected ? styles.selectedStroke : ""
               }`}
-              // style={{ pointerEvents: "stroke", cursor: "pointer" }}
               style={{ pointerEvents: (!isInteractive ? "none" : "stroke"), cursor: isInteractive ? "pointer" : "default" }}
               onDoubleClick={isInteractive ? handleDoubleClick : undefined}
             />
@@ -77,7 +73,6 @@ const Shape = ({ panelType, shapeType, isSelected, onSelect, onRemove, x, y }: P
             <polygon
               className={`${styles.shapeStroke} ${isSelected ? styles.selectedStroke : ""}`} 
               points="60,10 10,90 110,90"
-              // style={{ pointerEvents: "stroke", cursor: "pointer" }}
               style={{ pointerEvents: (!isInteractive ? "none" : "stroke"), cursor: isInteractive ? "pointer" : "default" }}
               onDoubleClick={isInteractive ? handleDoubleClick : undefined}
             />
@@ -103,12 +98,10 @@ const Shape = ({ panelType, shapeType, isSelected, onSelect, onRemove, x, y }: P
   
   return (
       <button
-          // className={styles.butt}
           className={shapeClasses}
           onClick={isInteractive ? undefined : handleClick}
           draggable={panelType === 'tools'}
           onDragStart={handleDragStart} 
-          // style={canvasStyle}
           style={{
             ...canvasStyle,
             pointerEvents: panelType === "canvas" ? "none" : "auto", // disables button interaction

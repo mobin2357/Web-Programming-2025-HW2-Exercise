@@ -5,7 +5,6 @@ import { ShapeProvider } from "../context/ShapeContext";
 import Canvas from "../components/Canvas";
 import { CountProvider } from "../context/CountContext";
 import CountBar from "../components/CountBar";
-// import { ListProvider, useList } from "../context/ListContext";
 import { ListProvider } from "../context/ListContext";
 import TitleBox from "../components/TitleBox";
 import { TitleProvider } from "../context/TitleContext";

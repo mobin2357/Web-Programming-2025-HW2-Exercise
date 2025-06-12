@@ -34,7 +34,6 @@
     transform: scale(1.05);
   }
 
-  /*********************************************/
   .editableTitle {
     cursor: pointer;
     transition: color 0.2s ease;
@@ -62,7 +61,6 @@
     border-radius: 4px;
     background-color: white;
     background-color: rgb(190, 206, 250);
-    /* background-color: rgb(246, 194, 238); */  
     background-color: #e6f0fa;
     outline: none;
     font-family: inherit;

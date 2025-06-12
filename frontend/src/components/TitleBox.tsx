@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useList } from "../context/ListContext";
 import { useCount } from "../context/CountContext";
-//////////////////////////////////////////////////////////////////////////
 import { useTitle } from "../context/TitleContext";
 
 import { PlacedShape } from "../data/ShapeTypes";
@@ -11,7 +10,6 @@ const TitleBox = () => {
   const { exportPainting, setShapesList } = useList();
   const { resetCounts, increment } = useCount();
   const fileInputRef = useRef<HTMLInputElement>(null);
-  /////////////////////////////////////////////////////////////////////////////////
   const { paintingTitle, setPaintingTitle } = useTitle();
   const [isEditing, setIsEditing] = useState(false);
   const [tempTitle, setTempTitle] = useState(paintingTitle);
@@ -33,8 +31,6 @@ const TitleBox = () => {
         const shapes: PlacedShape[] = json.shapes;
         setShapesList(shapes);
 
-        /////////////////////////////////////////////////////////////////////////
-         // If the imported file has a title, use it
         if (json.title && typeof json.title === 'string') {
           setPaintingTitle(json.title);
           setTempTitle(json.title);
@@ -50,13 +46,11 @@ const TitleBox = () => {
     reader.readAsText(file);
   };
 
-  //////////////////////////////////////////////////////////////////
   const handleTitleClick = () => {
     setIsEditing(true);
     setTempTitle(paintingTitle);
   };
 
-  //////////////////////////////////////////////////////////////////
   const handleTitleSubmit = () => {
     const finalTitle = tempTitle.trim();
     if (finalTitle) {
@@ -67,14 +61,11 @@ const TitleBox = () => {
     setIsEditing(false);
   };
 
-  ///////////////////////////////////////////////////////////////////
   const handleTitleCancel = () => {
     setTempTitle(paintingTitle);
     setIsEditing(false);
   };
 
-
-  ///////////////////////////////////////////////////////////////////
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleTitleSubmit();
@@ -83,7 +74,6 @@ const TitleBox = () => {
     }
   };
 
-  ///////////////////////////////////////////////////////////////////
   const handleInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     // Use setTimeout to ensure this runs after the browser's default focus behavior
     setTimeout(() => {
@@ -91,23 +81,6 @@ const TitleBox = () => {
       input.setSelectionRange(input.value.length, input.value.length); // Position cursor at the end
     }, 0);
   };
-
-  // return (
-  //   <div className={styles.titleBox}>
-  //     <h2 className={styles.title}>Painting Title</h2>
-  //     <div className={styles.buttonGroup}>
-  //       <button className={styles.topButton} onClick={handleImportClick}>Import</button>
-  //       <button className={styles.topButton} onClick={exportPainting}>Export</button>
-  //       <input
-  //         type="file"
-  //         accept="application/json"
-  //         ref={fileInputRef}
-  //         style={{ display: "none" }}
-  //         onChange={handleFileChange}
-  //       />
-  //     </div>
-  //   </div>
-  // );
 
   return (
     <div className={styles.titleBox}>

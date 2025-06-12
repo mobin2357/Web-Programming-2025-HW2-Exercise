@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import { ShapeType } from '../data/ShapeTypes';
 
-// export type ShapeType = "circle" | "square" | "triangle" | null;
-
 interface ShapeContextType {
   selectedShape: ShapeType;
   setSelectedShape: (shape: ShapeType) => void;

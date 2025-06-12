@@ -22,7 +22,6 @@
     fill: none;
     stroke: black;
     stroke-width: 3;
-    /* transition: stroke 0.2s ease; */
   }
   
   .selected-stroke {

@@ -1,9 +1,5 @@
-// import React, { createContext, useContext, useState, ReactNode } from "react";
 import { createContext, useContext, useState, ReactNode } from "react";
 import { ShapeType } from '../data/ShapeTypes';
-
-
-// export type ShapeType = "circle" | "square" | "triangle";
 
 interface Count {
   circle: number;
